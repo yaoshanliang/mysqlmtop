@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
-<title>MySQLMTOP 开源的MySQL企业级监控系统</title>
+<title>服务器监控</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -51,7 +51,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="<?php echo site_url('index/index') ?>">MySQLMTOP</a>
+          <a class="brand" href="<?php echo site_url('index/index') ?>">SKLCC服务器监控</a>
           <div class="nav-collapse collapse">
 <?php  if($this->session->userdata('logged_in')!=1) {?>
  <p class="navbar-text pull-right">
@@ -100,7 +100,9 @@
 <div class="container-fluid">
     <hr>
 
-        <p>&copy; MySQLMTOP V2.1 2013-2014 <a href="http://www.mtop.cc" target="_blank">www.mtop.cc</a> 版权所有 Power By <a href="http://www.ruzuojun.com" target="_blank">Ruzuojun</a>     <a href="http://www.mtop.cc/manual" target="_blank">在线手册</a> <a href="http://www.mtop.cc/forum" target="_blank">交流社区</a></p>
+		<p class = "pull-right">Copyright &copy; <a href="http://iat.net.cn" target="_blank">iat</a> 2014 Powered By <a href="http://www.lepus.cc/page/opensource" target="_blank">MySQLMTOP</a></p>
+
+
 
 </div>
 

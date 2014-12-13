@@ -1,11 +1,11 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
+/*@import url("http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
 @font-face {
   font-family: "Flat-UI-Icons-16";
   src: url("http://www.bootcss.com/p/flat-ui/fonts/Flat-UI-Icons-16.eot");
   src: url("http://www.bootcss.com/p/flat-ui/fonts/Flat-UI-Icons-16.eot?#iefix") format("embedded-opentype"), url("http://www.bootcss.com/p/flat-ui/fonts/Flat-UI-Icons-16.woff") format("woff"), url("http://www.bootcss.com/p/flat-ui/fonts/Flat-UI-Icons-16.ttf") format("truetype"), url("http://www.bootcss.com/p/flat-ui/fonts/Flat-UI-Icons-16.svg#Flat-UI-Icons-16") format("svg");
   font-weight: normal;
   font-style: normal; }
-
+*/
 
 [data-icon]:before {
   font-family: "Flat-UI-Icons-16";
