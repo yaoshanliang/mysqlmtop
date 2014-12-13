@@ -2,12 +2,13 @@
 
 basedir=""
 
+#remove the check from the source of the project to adapt to ubuntu server
 #check system,This script must be run on CentOS/RHEL only.
 ############################################################################
-if [ ! -f /etc/redhat-release ]; then
-    echo "[ERROR]: Sorry, this script is for CentOS/RHEL only."
-    exit 1
-fi
+#if [ ! -f /etc/redhat-release ]; then
+#    echo "[ERROR]: Sorry, this script is for CentOS/RHEL only."
+#    exit 1
+#fi
 #check basedir
 #############################################################################
 if test -z "$basedir"

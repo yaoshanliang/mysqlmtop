@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 #-*-coding:utf-8-*-
 from datetime import *
 import global_functions as func

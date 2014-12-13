@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 #coding:utf-8
 import os, sys, string, time, datetime, traceback;
 from multiprocessing import Process;
