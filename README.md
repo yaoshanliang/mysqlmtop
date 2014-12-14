@@ -16,28 +16,29 @@
 ####3、监控机配置
 （1）监控机创建监控数据库，并授予权限,导入SQL文件
 
-mysql> create database mysqlmtop default character set utf8;
+	mysql> create database mysqlmtop default character set utf8;
 
-mysql> grant select,insert,update,delete,create on mysqlmtop.* to 'mtop_user'@'localhost' identified by 'password';
+	mysql> grant select,insert,update,delete,create on mysqlmtop.* to 'mtop_user'@'localhost' identified by 'password';
 
-mysql> flush privileges;
+	mysql> flush privileges;
 
 导入sql文件夹里的SQL文件(表结构和数据文件)
 
-mysql -uroot -p mysqlmtop < mysqlmtop.sql
+	mysql -uroot -p mysqlmtop < mysqlmtop.sql
 
-mysql -uroot -p mysqlmtop < mysqlmtop_data.sql
+	mysql -uroot -p mysqlmtop < mysqlmtop_data.sql
 
 （2）对被监控的数据库进行授权
 
 备注：在python采集数据的过程中，需要连接到需要监控的数据库服务器采集数据，我们为了安全考虑，在WEB管理里面只要求录入主机和端口，没有录入账号和密码。所有需要监控的数据库请授予相同的用户密码记录在配置文件中。授权如下所示：
 
-grant select,super,process on *.* to 'monitor'@'ip' identified by 'monitor';
+	grant select,super,process on *.* to 'monitor'@'ip' identified by 'monitor';
 
 ###4、被监控服务器配置
 （1）将mysqlmtop文件夹上传至被监控服务器的/usr/local/下
 
 （2）修改被监控服务器配置文件
+	
 	cd /usr/local/mysqlmtop/
 
 	vim etc/config.ini 
