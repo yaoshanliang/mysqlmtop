@@ -1,13 +1,19 @@
 #MySQL监控系统
-由开源项目MYSQLMTOP及Linux-dash修改而来，实时MySQL健康监控、复制监控、进程监控、性能监控、实时告警、慢查询分析、服务器资源监控等。
-安装说明 (以ubuntu14.04为例)
-###1、安装LAMP环境
-命令：sudo apt-get install lamp-server^
-###2、安装python环境
+由开源项目MYSQLMTOP及linux-dash修改而来，实时MySQL健康监控、复制监控、进程监控、性能监控、实时告警、慢查询分析、服务器资源监控等。
+
+###安装说明 (以ubuntu14.04为例)
+####1、安装LAMP环境
+
+	sudo apt-get install lamp-server^
+
+####2、安装python环境
 系统已经安装python2.7，需要安装mysql-python，采用pip进行安装
-sudo apt-get install python-pip python-dev
-sudo pip install mysql-python
-###3、监控机配置
+
+	sudo apt-get install python-pip python-dev
+
+	sudo pip install mysql-python
+
+####3、监控机配置
 （1）监控机创建监控数据库，并授予权限,导入SQL文件
 
 mysql> create database mysqlmtop default character set utf8;
@@ -29,67 +35,68 @@ mysql -uroot -p mysqlmtop < mysqlmtop_data.sql
 grant select,super,process on *.* to 'monitor'@'ip' identified by 'monitor';
 
 ###4、被监控服务器配置
-将mysqlmtop文件夹上传至被监控服务器的/usr/local/下
-修改被监控服务器配置文件
-# cd /usr/local/mysqlmtop/
+（1）将mysqlmtop文件夹上传至被监控服务器的/usr/local/下
 
-# vim etc/config.ini 
+（2）修改被监控服务器配置文件
+	cd /usr/local/mysqlmtop/
 
-###监控机MySQL数据库连接地址###
-[monitor_server]
-host="localhost"
-port=3306
-user="mtop_user"
-passwd="password"
-dbname="mysqlmtop"
+	vim etc/config.ini 
 
-###被监控MySQL数据库的用户密码###
-[mysql_db]
-username="monitor"
-password="monitor"
+	###监控机MySQL数据库连接地址###
+	[monitor_server]
+	host="localhost"
+	port=3306
+	user="mtop_user"
+	passwd="password"
+	dbname="mysqlmtop"
 
-###邮件报警服务器地址###
-[mail_server]
-mail_host="smtp.126.com"
-mail_user="alarm@126.com"
-mail_pass="password"
-mail_postfix="126.com"
+	###被监控MySQL数据库的用户密码###
+	[mysql_db]
+	username="monitor"
+	password="monitor"
 
-###Linux系统资源监控###
-[linux_server]
-server_ip=""
+	###邮件报警服务器地址###
+	[mail_server]
+	mail_host="smtp.126.com"
+	mail_user="alarm@126.com"
+	mail_pass="password"
+	mail_postfix="126.com"
 
-2.3授予可执行文件执行权限
+	###Linux系统资源监控###
+	[linux_server]
+	server_ip=""
 
-# chmod a+x  *.py 
+（3）授予可执行文件执行权限
 
-# chmod a+x  *.sh 
+	chmod a+x  *.py 
 
-# chmod a+x  mtopctl
+	chmod a+x  *.sh 
 
-# ln -s /usr/local/mysqlmtop/mtopctl /usr/local/bin/
+	chmod a+x  mtopctl
 
-2.4 测试MySQL连接(可选)
+	ln -s /usr/local/mysqlmtop/mtopctl /usr/local/bin/
+
+（4）测试MySQL连接(可选)
 
 提示MySQLDB OK即为正常状态。
 
-# ./test_mysql.py 
-MySQLDB OK!
+	./test_mysql.py 
+	MySQLDB OK!
  
 
-2.5启动监控系统(注意：只有监控进程运行时系统才会进行监控和报警)
+（5）启动监控系统(注意：只有监控进程运行时系统才会进行监控和报警)
 
-# mtopctl  start
+	mtopctl  start
 
 ###5、安装web管理界面
 将frontweb文件夹下的文件上传至监控机服务器
 打开application\config\database.php文件，修改PHP连接监控服务器的数据库信息
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'mtop_user';
-$db['default']['password'] = 'password';
-$db['default']['database'] = 'mysqlmtop';
-$db['default']['dbdriver'] = 'mysql';
+	$db['default']['hostname'] = 'localhost';
+	$db['default']['username'] = 'mtop_user';
+	$db['default']['password'] = 'password';
+	$db['default']['database'] = 'mysqlmtop';
+	$db['default']['dbdriver'] = 'mysql';
 
 通过浏览器输入IP地址或域名，例如http://localhost打开监控界面，即可登录系统.
 
