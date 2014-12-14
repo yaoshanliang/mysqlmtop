@@ -367,7 +367,7 @@ CREATE TABLE `mysql_status` (
   `application_id` smallint(4) DEFAULT NULL,
   `connect` varchar(20) DEFAULT NULL,
   `uptime` int(11) NOT NULL DEFAULT '0',
-  `version` varchar(20) DEFAULT NULL,
+  `version` varchar(30) DEFAULT NULL,
   `connections` varchar(20) DEFAULT NULL,
   `active` varchar(20) DEFAULT NULL,
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
