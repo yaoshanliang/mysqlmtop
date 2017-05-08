@@ -99,7 +99,7 @@
 	$db['default']['database'] = 'mysqlmtop';
 	$db['default']['dbdriver'] = 'mysql';
 
-通过浏览器输入IP地址或域名，例如http://localhost打开监控界面，即可登录系统.
+通过浏览器输入IP地址或域名，例如http://localhost 打开监控界面，即可登录系统.
 
 默认管理员账号密码admin/admin 登录后请修改密码，增加普通账号
 以管理员用户登录系统后在管理中心添加应用和服务器
