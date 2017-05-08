@@ -1,19 +1,19 @@
-#MySQL监控系统
+# MySQL监控系统
 由开源项目MYSQLMTOP及linux-dash修改而来，实时MySQL健康监控、复制监控、进程监控、性能监控、实时告警、慢查询分析、服务器资源监控等。
 
-###安装说明 (以ubuntu14.04为例)
-####1、安装LAMP环境
+### 安装说明 (以ubuntu14.04为例)
+#### 1、安装LAMP环境
 
 	sudo apt-get install lamp-server^
 
-####2、安装python环境
+#### 2、安装python环境
 系统已经安装python2.7，需要安装mysql-python，采用pip进行安装
 
 	sudo apt-get install python-pip python-dev
 
 	sudo pip install mysql-python
 
-####3、监控机配置
+#### 3、监控机配置
 （1）监控机创建监控数据库，并授予权限,导入SQL文件
 
 	mysql> create database mysqlmtop default character set utf8;
@@ -34,7 +34,7 @@
 
 	grant select,super,process on *.* to 'monitor'@'ip' identified by 'monitor';
 
-###4、被监控服务器配置
+### 4、被监控服务器配置
 （1）将mysqlmtop文件夹上传至被监控服务器的/usr/local/下
 
 （2）修改被监控服务器配置文件
@@ -89,7 +89,7 @@
 
 	mtopctl  start
 
-###5、安装web管理界面
+### 5、安装web管理界面
 将frontweb文件夹下的文件上传至监控机服务器
 打开application\config\database.php文件，修改PHP连接监控服务器的数据库信息
 
